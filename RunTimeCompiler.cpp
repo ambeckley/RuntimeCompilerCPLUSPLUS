@@ -17,7 +17,6 @@ int some_execute_function(const std::string& code)
             << "string binary_executable("
             << "\"./RunTimeCompiler\");\n"
             << "int main(){\n"
-            //<< "cout << endl;"
             << code 
             << "\n"
             << "return system(binary_executable.c_str());\n"
@@ -29,16 +28,15 @@ int some_execute_function(const std::string& code)
     bool it_didnt_compile = system(build_command.c_str());
     if(it_didnt_compile)
     {
-        //return EXIT_FAILURE;
+        
         return system(binary_executable.c_str());
-        //goto LOOP;
+        
         
     }
     else
     {
         return system(dynamic_executable.c_str());
-        //return system(binary_executable.c_str());
-        //goto LOOP;
+        
     }
 }
 
@@ -52,21 +50,12 @@ int main()
   
     std::cout << "C++: ";
     std::getline(std::cin, a);
-    //std::cin >> a;
-    //std::cout << a;
+    
     if(a == b) {
         std::cout << "\nExited.";
     } else {
     std::string code_string = a;
-    //string s;
-    /*while( getline( cin, a ) ) {
-       // do something with a
-       //return some_execute_function(code_string);
-
-    }*/
-     
-    //std::string code_string = "std::cout << \"Hello World!!\\\n\";";
-    //std::cout << "The Solution is: ";
+    
     return some_execute_function(code_string);
     }
     return 0;
